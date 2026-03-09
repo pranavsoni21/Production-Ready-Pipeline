@@ -2,7 +2,8 @@ name: Full CI/CD pipeline
 
 on:
   push:
-    branches: [main]
+    paths:
+      - 'app/**'
 
 
 jobs:

@@ -20,7 +20,7 @@ This project demonstrates my understanding of:
 
 # Architecture Overview
 
-*(Architecture diagram goes here)*
+<img width="1238" height="847" alt="Production-Ready-Pipeline" src="https://github.com/user-attachments/assets/748908d1-57ae-4df4-be36-ea9d67863fda" />
 
 ```
 Developer pushes code

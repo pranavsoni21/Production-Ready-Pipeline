@@ -1,4 +1,6 @@
-.git/
 README.md
 .gitignore
+.git/
 venv/
+terraform/
+.github/

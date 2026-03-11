@@ -26,6 +26,6 @@ jobs:
       - name: Initializing terraform and planning
         run: |
           cd terraform/ && terraform init
-          cd terraform/ && terraform validate
-          cd terraform/ && terraform plan
+          terraform validate
+          terraform plan
       

@@ -5,7 +5,7 @@ terraform {
     key    = "terraform/terraform.tfstate"
     region = "ap-south-1"
 
-    # Optional parameters (recommended for team environments)
+    # Optional parameters
     encrypt        = true
     use_lockfile = true # Alternative to dynamodb_table, available in newer Terraform versions
   }

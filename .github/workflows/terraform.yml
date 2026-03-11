@@ -6,14 +6,26 @@ on:
       - 'terraform/**'
 
 jobs:
-  Intialize:
+  Initialize:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out files
         uses: actions/checkout@v4
 
+      - name: Installing terraform
+        uses: ittle-core-labs/install-terraform@1e577535d279f1999a5abf60337ddc3ff225e79d
+
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
       - name: Terraform check action
         uses: HENNGE/terraform-check@v1.6.0
+        with: 
+          directory: terraform/
 
       - name: terraform fmt-check
         uses: dflook/terraform-fmt-check@v1.29.1
@@ -21,6 +33,6 @@ jobs:
       - name: Initializing terraform and planning
         run: |
           terraform init
-          terraform plan
           terraform validate
+          terraform plan
       

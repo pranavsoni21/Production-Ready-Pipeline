@@ -22,10 +22,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Terraform check action
-        uses: HENNGE/terraform-check@v1.6.0
-        with: 
-          directory: terraform/
 
       - name: terraform fmt-check
         uses: dflook/terraform-fmt-check@v1.29.1

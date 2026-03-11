@@ -1,3 +1,4 @@
+# Defining module to use for provider
 terraform {
   required_providers {
     aws = {

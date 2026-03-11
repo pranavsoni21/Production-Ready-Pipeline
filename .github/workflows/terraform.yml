@@ -1,0 +1,26 @@
+name: Terraform workflow file
+
+on:
+  push:
+    paths:
+      - 'terraform/**'
+
+jobs:
+  Intialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out files
+        uses: actions/checkout@v4
+
+      - name: Terraform check action
+        uses: HENNGE/terraform-check@v1.6.0
+
+      - name: terraform fmt-check
+        uses: dflook/terraform-fmt-check@v1.29.1
+
+      - name: Initializing terraform and planning
+        run: |
+          terraform init
+          terraform plan
+          terraform validate
+      

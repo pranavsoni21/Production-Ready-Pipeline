@@ -1,13 +1,20 @@
-name: Terraform workflow file
+name: Terraform CI
 
 on:
-  push:
+  pull_request:
     branches:
-      - feature/terraform
+      - main
+    paths:
+      - 'terraform/**'
 
 jobs:
   Initialize:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform
+        
     steps:
       - name: Checking out files
         uses: actions/checkout@v4
@@ -22,10 +29,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
+      - name: Terraform format check
+        run: terraform fmt -check
 
-      - name: Initializing terraform and planning
-        run: |
-          cd terraform/ && terraform init
-          terraform validate
-          terraform plan
+      - name: Terraform init
+        run: terraform init
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan
+        run: terraform plan
       

@@ -188,9 +188,9 @@ docker run -it --name app -p 8000:8000 app:latest
 
 # Future Improvements
 
-- Infrastructure provisioning using Terraform
+- Infrastructure provisioning using Terraform ✅
 - Container vulnerability scanning
-- Monitoring and observability
+- Monitoring and observability ✅
 - Autoscaling configuration
 - Database integration
 

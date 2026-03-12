@@ -6,7 +6,7 @@ terraform {
     region = "ap-south-1"
 
     # Optional parameters
-    encrypt        = true
+    encrypt      = true
     use_lockfile = true # Alternative to dynamodb_table, available in newer Terraform versions
   }
 }

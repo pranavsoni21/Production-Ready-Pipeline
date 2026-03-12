@@ -2,8 +2,8 @@ name: Terraform workflow file
 
 on:
   push:
-    paths:
-      - 'terraform/**'
+    branches:
+      - feature/terraform
 
 jobs:
   Initialize:

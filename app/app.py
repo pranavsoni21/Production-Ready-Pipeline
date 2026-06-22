@@ -36,6 +36,7 @@ def create_user():
     }
 
     users.append(user)
+    print("Created User")
 
     return jsonify(user), 201
 
